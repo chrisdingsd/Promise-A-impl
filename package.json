@@ -1,0 +1,23 @@
+{
+    "name": "chengnuo.js",
+    "version": "0.0.1",
+    "description": "A Promise/A+ implementation",
+    "main": "Chengnuo.js",
+    "scripts": {
+        "test": "node testrunner.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yaodingyd/Chengnuo"
+    },
+    "keywords": [
+        "Chengnuo.js",
+        "promise/A+",
+        "promise"
+    ],
+    "author": "Yao Ding",
+    "license": "MIT",
+    "devDependencies": {
+        "promises-aplus-tests": "~2"
+    }
+}
