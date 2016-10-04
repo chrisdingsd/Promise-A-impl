@@ -18,6 +18,10 @@ var _isObject = function(val) {
     return val && typeof val === 'object';
 }
 
+var _isArray = function(val) {
+    return val && Array.isArray(val);
+}
+
 var _isPromise = function(val) {
     return val && val instanceof Chengnuo
 }
@@ -40,6 +44,7 @@ function Chengnuo(fn) {
         reject: null
     };
 
+    //just for testing
     self.verbose = false;
 
     self.promiseQueue = [];
@@ -199,16 +204,46 @@ var then = function(onFulfilled, onRejected) {
     return promise;
 }
 
+//Because 'catch' is a reserved keyword...
+var catchReject = function(onRejected) {
+    return this.then(null, onRejected);
+}
+
+var all = function(promises) {
+    var promise = new Chengnuo();
+    if (_isArray(promises) && promises.length > 0) {
+        var values = new Array(promises.length);
+        var rejected = false;
+        var processed = 0;
+        promises.forEach(function(item, i) {
+            var tempPromise = new Chengnuo(function(resolve) {
+                resolve(item);
+            });
+            tempPromise.then(function(value) {
+                if (!rejected) {
+                    values[i] = value;
+                    processed++;
+                    if (processed === promises.length) {
+                        Resolve(promise, values);
+                    }
+                }
+            }, function(reason) {
+                rejected = true;
+                promise.reject(reason);
+            });
+        });
+    } else {
+        Resovle(promise, []);
+    }
+    return promise;
+}
 
 Chengnuo.prototype.fulfill = fulfill;
 Chengnuo.prototype.reject = reject;
 Chengnuo.prototype.then = then;
 Chengnuo.prototype.handle = handle;
-
-Chengnuo.prototype.setVerbose = function(flag) {
-    this.verbose = flag;
-}
-
+Chengnuo.prototype.catch = catchReject;
+Chengnuo.prototype.all = all;
 
 module.exports = {
     resolved: function(value) {
