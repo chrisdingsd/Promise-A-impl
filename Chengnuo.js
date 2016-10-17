@@ -243,7 +243,7 @@ Chengnuo.prototype.reject = reject;
 Chengnuo.prototype.then = then;
 Chengnuo.prototype.handle = handle;
 Chengnuo.prototype.catch = catchReject;
-Chengnuo.prototype.all = all;
+Chengnuo.all = all;
 
 module.exports = {
     resolved: function(value) {
@@ -268,5 +268,6 @@ module.exports = {
             reject: reject
         };
 
-    }
+    },
+    all: all
 }

@@ -1,23 +1,26 @@
 {
-    "name": "chengnuo.js",
-    "version": "0.0.1",
-    "description": "A Promise/A+ implementation",
-    "main": "Chengnuo.js",
-    "scripts": {
-        "test": "node testrunner.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/yaodingyd/Chengnuo"
-    },
-    "keywords": [
-        "Chengnuo.js",
-        "promise/A+",
-        "promise"
-    ],
-    "author": "Yao Ding",
-    "license": "MIT",
-    "devDependencies": {
-        "promises-aplus-tests": "~2"
-    }
+  "name": "chengnuo.js",
+  "version": "0.0.1",
+  "description": "A Promise/A+ implementation",
+  "main": "Chengnuo.js",
+  "scripts": {
+    "test": "node testrunner.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yaodingyd/Chengnuo"
+  },
+  "keywords": [
+    "Chengnuo.js",
+    "promise/A+",
+    "promise"
+  ],
+  "author": "Yao Ding",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.0",
+    "promises-aplus-tests": "~2",
+    "sinon": "^1.17.6"
+  }
 }
