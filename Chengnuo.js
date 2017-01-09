@@ -267,7 +267,6 @@ module.exports = {
             resolve: resolve,
             reject: reject
         };
-
     },
     all: all
 }
