@@ -5,3 +5,8 @@
 
 # Chengnuo.js
 Yet another Promise/A+ implementation.
+
+承诺，chéng nuò means 'Promise' in Chinese.
+
+Also, nameing stuff is hard.
+
